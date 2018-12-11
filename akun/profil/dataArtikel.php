@@ -111,45 +111,32 @@ $akun = mysqli_fetch_array($qryTampil);
   <!--==========================
     Hero Section
   ============================-->
-  <main id="main" style="margin-top: 120px; padding-bottom: 100px;">
+  <main id="main" style="margin-top: 150px; padding-bottom: 100px;">
     <div class="container">
 
           <div class="row">    
             
             <div class="col-lg-3">
 
-              <h3 class="my-4">Kategori</h3>
-
               <div class="row">
-                <div class="mini-submenu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </div>
                 <div class="list-group">
                     <span href="#" class="list-group-item active">
-                        Submenu
-                        <span class="pull-right" id="slide-submenu">
-                            <i class="fa fa-times"></i>
-                        </span>
+                        Profil
                     </span>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-comment-o"></i> Lorem ipsum
+                    <a href="index.php" class="list-group-item">
+                        <i class="fa fa-user"></i> Data Profil
                     </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-search"></i> Lorem ipsum
+                    <a href="editAkun.php" class="list-group-item">
+                        <i class="fa fa-cogs"></i> Setting Profil
                     </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-user"></i> Lorem ipsum
+                    <a href="editPassword.php" class="list-group-item">
+                        <i class="fa fa-key"></i> Ganti Password
                     </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-folder-open-o"></i> Lorem ipsum <span class="badge">14</span>
+                    <a href="tambahArtikel.php" class="list-group-item">
+                        <i class="fa fa-plus"></i> Tambah Artikel
                     </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-bar-chart-o"></i> Lorem ipsumr <span class="badge">14</span>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <i class="fa fa-envelope"></i> Lorem ipsum
+                    <a href="" class="list-group-item">
+                        <i class="fa fa-file-text"></i> Data Artikel
                     </a>
                 </div>
               </div>

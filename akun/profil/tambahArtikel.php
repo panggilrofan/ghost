@@ -30,6 +30,11 @@ $akun = mysqli_fetch_array($qryTampil);
   <link href="../../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="../../lib/animate/animate.min.css" rel="stylesheet">
 
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../admin/bower_components/Ionicons/css/ionicons.min.css">
+
   <!-- Main Stylesheet File -->
   <link  href="css/style.css" rel="stylesheet">
   <link  href="css/nav.css" rel="stylesheet">
@@ -106,32 +111,38 @@ $akun = mysqli_fetch_array($qryTampil);
   <!--==========================
     Hero Section
   ============================-->
-  <main id="main" style="margin-top: 120px; padding-bottom: 100px;">
+  <main id="main" style="margin-top: 150px; padding-bottom: 100px;">
     <div class="container">
 
-          <div class="row">
-
+          <div class="row">    
+            
             <div class="col-lg-3">
 
-              <h3 class="my-4">Kategori</h3>
-
-              <div id="menu-wrap">
-                <ul id="menu">
-                  <li class="cc"><a class="list-group-item" href="index.php">Profil</a></li>
-                  <li class="cc"><a class="list-group-item" href="editAkun.php">Edit Profil</a></li>
-                  <li class="cc"><a class="list-group-item" href="editPassword.php">Ganti Password</a></li>
-                  <li class="cc"><a class="tutup list-group-item" href="#">Artikel</a>
-                    <ul class="sub">
-                    <li class="cc"><a class="list-group-item active" href="tambahArtikel.php">Buat Artikel</a></li>
-                    <li class="cc"><a class="list-group-item" href="dataArtikel.php">Artikel</a></li>
-                    </ul>
-                  </li>
-                </ul>
+              <div class="row">
+                <div class="list-group">
+                    <span href="#" class="list-group-item active">
+                        Profil
+                    </span>
+                    <a href="index.php" class="list-group-item">
+                        <i class="fa fa-user"></i> Data Profil
+                    </a>
+                    <a href="editAkun.php" class="list-group-item">
+                        <i class="fa fa-cogs"></i> Setting Profil
+                    </a>
+                    <a href="editPassword.php" class="list-group-item">
+                        <i class="fa fa-key"></i> Ganti Password
+                    </a>
+                    <a href="" class="list-group-item">
+                        <i class="fa fa-plus"></i> Tambah Artikel
+                    </a>
+                    <a href="dataArtikel.php" class="list-group-item">
+                        <i class="fa fa-file-text"></i> Data Artikel
+                    </a>
+                </div>
               </div>
-
             </div>
-            <!-- /.col-lg-3 -->
 
+            <!-- /.col-lg-3 -->
             <div class="col-lg-9">
               <div class="container" style="margin-top: 0px;">
                     <div class="card">
@@ -145,12 +156,12 @@ $akun = mysqli_fetch_array($qryTampil);
                             <div class="row">
                                 <div class="col-md-12">
                                   <form method="post" action="prosesTambahArtikel.php" enctype="multipart/form-data">
-                                    <div class="form-group mt-3" style="width:50%;">
+                                    <div class="form-group mt-3" style="width:100%;">
 
                                       <input type="text" name="judul" class="form-control" id="pwd" placeholder="Judul Artikel">
                                     </div>
 
-                                    <div class="form-group mt-3" style="width:60%;">
+                                    <div class="form-group mt-3" style="width:100%;">
                                     <textarea name="artikel" id="editor" rows="8" cols="80"></textarea>
                                     </div>
 
@@ -166,13 +177,14 @@ $akun = mysqli_fetch_array($qryTampil);
                     </div>
                 </div>
               </div>
-            </div>
+          </div>
+      </div>
   </main>
 
   <!--==========================
     Footer
   ============================-->
-  <footer id="footer">
+  <footer id="footer" style="top: 800px; padding-bottom: 70px;">
     <div class="footer-top">
       <div class="container">
 
@@ -218,5 +230,27 @@ $akun = mysqli_fetch_array($qryTampil);
   <!-- Nav Kategori -->
   <script src="js/nav.js"></script>
 
+  <!-- DataTables -->
+  <script src="../../admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="../../admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  
+  <!-- SlimScroll -->
+  <script src="../../admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="../../admin/bower_components/fastclick/lib/fastclick.js"></script>
+
+  <script>
+    $(function () {
+      $('#example1').DataTable()
+      $('#example2').DataTable({
+        'paging'      : true,
+        'lengthChange': false,
+        'searching'   : false,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+      })
+    })
+  </script>
 </body>
 </html>
